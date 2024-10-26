@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+</head>
+<body>
+    <div class="log-in">
+        <img class="form-component-icon" alt="" src="{% static 'img/orange.jpg' %}">
+        <div class="form1">
+            <div class="log-in1">Log In</div>
+            <div class="inner-frame">
+                <form method="post">
+                    {% csrf_token %}
+                    {% if error_message %}
+                    <div class="error-message">
+                        <p>{{ error_message }}</p>
+                    </div>
+                    {% endif %}
+                    <div class="group">
+                        <div class="frame-group-following">
+                            <div class="get-started">
+                                <div class="group1">
+                                    <img class="group-icon3" alt="" src="{% static 'img/user-139.svg' %}">
+                                    <input name="username" class="following" placeholder="Username" type="text">
+                                </div>
+                                <div class="trainer-frame">
+                                    <img class="group-icon4" alt="" src="{% static 'img/password.svg' %}">
+                                    <input name="password" class="following1" placeholder="Password" type="password">
+                                </div>
+                            </div>
+                            <button class="frame-following" type="submit">
+                                <div class="following11">Log In</div>
+                            </button>
+                        </div>
+                        <div class="trainers">
+                            <div class="following12">Forgot password?</div>
+                        </div>
+                    </div>
+                </form>
+                <div class="line-frame-pair">
+                    <div class="frame-quadruple">
+                        <div class="nested-frames">
+                            <div class="line-single"></div>
+                        </div>
+                        <div class="following13">or</div>
+                        <div class="nested-frames1">
+                            <div class="nested-frames-child"></div>
+                        </div>
+                    </div>
+                    <div class="group-x-m-l-i-d">
+                        <button class="group-x-m-l-i-d-pair">
+                            <img class="group-x-m-l-i-d-pair-child" alt="" src="{% static 'img/google.jpg' %}">
+                            <div class="frame-quadruple1">
+                                <div class="following14">Google</div>
+                            </div>
+                        </button>
+                        <button class="group-x-m-l-i-d-pair1">
+                            <img class="xmlid-17-icon1" alt="" src="{% static 'img/facebook.jpg' %}">
+                            <div class="following-frame">
+                                <div class="following15">Facebook</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="following-texts">
+                <div class="following16">Don’t have an account?</div>
+                <div class="following17" id="followingText8">Sign Up</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var followingText8 = document.getElementById("followingText8");
+        if (followingText8) {
+            followingText8.addEventListener("click", function (e) {
+                window.location.href = "./signup";
+            });
+        }
+    </script>
+</body>
+</html>

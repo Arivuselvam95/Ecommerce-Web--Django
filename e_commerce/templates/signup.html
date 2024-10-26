@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Sign Up</title>
+
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+</head>
+<body>
+<div class="sign-up">
+    <img class="unsplash9ickpsq9g5q-icon" alt="" src="{% static 'img/R.jpg' %}">
+
+    <div class="form">
+        <h1 class="sign-up1">Sign Up</h1>
+        <form class="following-frames-group-parent" action="signup" method="POST">
+            {% csrf_token %}
+            <div class="following-frames-group">
+                <div class="frame-a">
+                    <div class="frame-b">
+                        <div class="group-parent">
+                            <img class="group-icon" alt="" src="{% static 'img/user-139.svg' %}">
+                            <input name="username" class="following" placeholder="user name" type="text">
+                        </div>
+                        <div class="group-parent">
+                            <img class="group-icon" alt="" src="{% static 'img/email.svg' %}">
+                            <input name="user_email" class="following" placeholder="Your email" type="text">
+                        </div>
+                        <div class="group-group">
+                            <img class="group-icon1" alt="" src="{% static 'img/password.svg' %}">
+                            <input name="pass1" class="following1" placeholder="Password" type="password">
+                        </div>
+                        <div class="group-container">
+                            <img class="group-icon2" alt="" src="{% static 'img/password.svg' %}">
+                            <input name="pass2" class="following2" placeholder="Repeat Password" type="password">
+                        </div>
+                    </div>
+                    <button class="frame-d" type="submit">
+                        <div class="following3">Sign Up</div>
+                    </button>
+                </div>
+            </div>
+            <div class="frame-f">
+                <div class="following-line-group">
+                    <div class="line-following">
+                        <div class="line-following-child"></div>
+                    </div>
+                    <div class="line-following1">
+                        <div class="line-following-item"></div>
+                    </div>
+                    <div class="following4">or</div>
+                </div>
+                <div class="frame-h">
+                    <div class="x-m-l-i-d-frame-group">
+                        <div class="following-users-frame">
+                            <button class="frame-x-m-l-i-d">
+                                <img class="frame-x-m-l-i-d-child" alt="" src="{% static 'img/google.jpg' %}">
+                                <div class="following-wrapper">
+                                    <div class="following5">Google</div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="following6">Already have an account?</div>
+                    </div>
+                    <div class="x-m-l-i-d-frame-group1">
+                        <div class="x-m-l-i-d-frame-group-inner">
+                            <button class="xmlid-17-parent">
+                                <img class="xmlid-17-icon" alt="" src="{% static 'img/facebook.jpg' %}">
+                                <div class="following-container">
+                                    <div class="following7">Facebook</div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="following8" id="followingText8">Log In</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    var followingText8 = document.getElementById("followingText8");
+    if (followingText8) {
+        followingText8.addEventListener("click", function (e) {
+            window.location.href = "signin";
+        });
+    }
+</script>
+</body>
+</html>

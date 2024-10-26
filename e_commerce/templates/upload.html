@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% block content %}
+    <div class="container-fluid" style="margin-top: 50px">
+        <div class="col-md-offset-1 col-md-4">
+            <h3 class="page-hader text-primary text-center">Upload files</h3>
+            {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'error'%}
+                    <div class="alert-danger">
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="alert-danger-{{ message.tags}}">
+                        {{ message }}
+                    </div>
+                {% endif %}
+                {% endfor %}
+            {% endif%}
+
+
+
+
+            <form action="{% url 'uploadfile'%}" method="POST" enctype="multipart/form-data">
+                {%csrf_token%}
+                <div class="form-group">
+                    <label>File Name</label>
+                    {{form.file_name}}
+                </div>
+                <div class="form-group">
+                    <label>File</label>
+                    {{form.file}}
+                </div>
+                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+            </form>
+        </div>
+    
+    </div>
+{%endblock%}
